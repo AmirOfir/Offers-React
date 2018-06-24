@@ -15,13 +15,13 @@
     }
 
     .offers {
-      height: calc(812px - 60px - 58px - 56px);
+      height: calc(812px - 60px - 58px - 56px) !important;
     }
 
     nav.navbar {
       top: calc(30px - 9px + 812px - 56px);
-      bottom: unset;
-      width: calc(375px - 12px);
+      bottom: unset !important;
+      width: calc(375px - 12px) !important;
       border-radius: 5px;
     }
 }
