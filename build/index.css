@@ -1,0 +1,16 @@
+
+@media screen
+  and (min-device-width: 1200px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    body {
+      background: linear-gradient(to bottom,#d6e6ef, #717177);
+    }
+    #root {
+      width: 375px;
+      height: 812px;
+      border: 5px solid #000;
+      background: #fff;
+      border-radius: 14px;
+      margin: 30px auto;
+    }
+}
