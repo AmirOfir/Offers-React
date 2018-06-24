@@ -13,4 +13,15 @@
       border-radius: 14px;
       margin: 30px auto;
     }
+
+    .offers {
+      height: calc(812px - 60px - 58px - 56px);
+    }
+
+    nav.navbar {
+      top: calc(30px - 9px + 812px - 56px);
+      bottom: unset;
+      width: calc(375px - 12px);
+      border-radius: 5px;
+    }
 }
