@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { MdChevronRight } from 'react-icons/lib/md';
 
 class Offer extends Component {
   get offer() {
     return this.props.offer;
   }
+
   render() {
-    const { For, YouGet, From, Because } = this.offer;
+    const { For, YouGet, From, Because, id } = this.offer;
 
     return (
       <div className="offer">
         <div className="you-get">
-          <p>
+          <p style={{fontSize: '15px'}}>
             {YouGet}
           </p>
         </div>
@@ -25,6 +27,27 @@ class Offer extends Component {
         </div>
       </div>
     );
+  }
+
+  $(selector) {
+    const root = ReactDOM.findDOMNode(this);
+    return root.querySelectorAll('.you-get p');
+  }
+
+  componentDidMount(){
+    const isOverflown = element =>
+      element.scrollHeight > element.parentElement.clientHeight || element.scrollWidth > element.parentElement.clientWidth;
+
+    const elements = this.$('.you-get p');
+    console.log(elements);
+    for (let el of elements) {
+      let fontSize = parseInt(el.style.fontSize);
+      let i = fontSize;
+      while (i > 0 && isOverflown(el)) {
+        fontSize--;
+        el.style.fontSize = fontSize + "px";
+      }
+    }
   }
 }
 
